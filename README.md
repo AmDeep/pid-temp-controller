@@ -1,5 +1,11 @@
 # Simple PID Temperature Controller
 
+## Engineering evidence
+
+- `tools/thermal_response.py` simulates the heater, thermal loss, anti-windup integral, and final setpoint error.
+- Run `python tools/thermal_response.py --setpoint 55 --seconds 120` to compare tuning choices.
+- The repository shows how a physical control loop is bounded and evaluated before connecting a heater.
+
 ## Objective
 
 Implement a classic PID loop on an Arduino that regulates temperature with a heater element and a DS18B20 sensor. The firmware includes anti-windup, output limiting, and live serial monitoring so the loop can be tuned on real hardware.
